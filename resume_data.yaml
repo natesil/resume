@@ -1,0 +1,73 @@
+bio:
+  Name: Nathan Silverman
+  Email: Nathan.Silverman97@gmail.com
+  linked_in: https://linkedin.com/in/nathan-silverman-094103170
+  github: https://github.com/natesil
+  tagline: AI Engineer · Backend & Data Systems
+  summary: >-
+    Engineer with 6 years building and shipping production AI systems, backend services, and data platforms.
+    I design and own the full stack of an AI product: LLM orchestration (RAG, multi-agent, text-to-SQL),
+    the backend and infrastructure to run it (Python, Kubernetes, AWS), and the evaluation frameworks to keep
+    it accurate. Backed by deep data fundamentals (modeling, warehousing, pipelines) that most AI engineers
+    lack. Track record of taking ambiguous problems to production: a company-wide GenAI platform, an LLM
+    pipeline that replaced a $500K vendor contract, and self-service analytics adopted across teams. Seeking
+    a product-focused team building AI systems that real users depend on.
+
+education:
+  - Degree: B.S. in Management Information Systems, Minor in Political Science
+    Institution: University of Connecticut
+    Graduation Year: December 2019
+
+experience:
+  - Company: The Travelers Companies, Inc.
+    Location: Hartford, CT
+    Roles:
+      - Job Title: Data Engineer 2
+        Team: Enterprise Risk & Underwriting
+        Duration: July 2025 – Present
+        Responsibilities:
+          - Took enterprise underwriting leadership from manual line-of-business inquiries to AI-enabled self-service analytics by delivering a production LangGraph multi-agent text-to-SQL application on EKS and AWS that has served 200+ on-demand risk and portfolio-mix queries informing organization-wide underwriting guidelines.
+          - Designed an LLM-as-Judge evaluation framework that benchmarks the system at 80% answer accuracy and guards against regression as it evolves, paired with an in-app feedback loop that lets users flag failures and suggest improvements for admin review.
+          - Drove adoption of the text-to-SQL architecture across two adjacent teams, who reused it to self-serve analytics on their own data warehouses with no direct involvement required.
+          - Leading exploratory R&D into ontology-driven (RDF) knowledge graphs vs. property graphs as semantic layers for LLM retrieval, paired with agentic metadata extraction, to inform the next-generation architecture of the text-to-SQL platform.
+          - Drove Databricks Asset Bundle adoption for the team by evaluating options, configuring the deployment pattern, coaching the team to own it, and contributing improvements back to internal innersource.
+          - Validated a cross-segment property exposure data model under deadline pressure, enabling on-time delivery of an enterprise-wide risk view used to drive underwriting guideline development.
+
+      - Job Title: Data Engineer 2
+        Team: Market Research AI
+        Duration: January 2024 – July 2025
+        Responsibilities:
+          - Replaced a manual process of combing through 1,000+ market research documents with company-wide AI self-service, delivering a production RAG application with multi-index vector search and reranking, scaled to 350+ users across multiple job types and shipped in a single 8-week iteration.
+          - Built an internal Python ingestion library using Unstructured to connect S3 and SharePoint, process, and embed documents at scale; deployed on K8s cron jobs serving the production RAG pipeline.
+          - Delivered an LLM-based survey topic-assignment pipeline that replaced a $500K annual vendor contract, benchmarked against open-source BERT-based topic models with human-labeled responses as ground truth.
+          - Owned end-to-end infrastructure and deployment decisions for the full-stack application, establishing K8s-based production patterns adopted as the team's standard.
+          - Modeled the topic pipeline as a Data Vault (hubs, links, and satellites with hashed business keys) so new topics onboard as data rather than schema changes. JSON lands in S3, auto-loads to Snowflake via Tasks, and is modeled in DBT from a K8s-scheduled container; described by the current owner as highly extensible across use cases.
+
+      - Job Title: Data Engineer 1
+        Team: Enterprise Data Products
+        Duration: October 2021 – December 2023
+        Responsibilities:
+          - Modernized an expensive IBM UrbanCode Deploy / PCF eventing stack by designing and proposing a containerized Kafka consumer group on Kubernetes, securing leadership buy-in on a stretch assignment and shipping it to production.
+          - Replaced a sprawl of spaghetti Lambda functions with "The Refinery," an internally-published Python library using an adaptor pattern that let engineers configure transformation, masking, and enrichment pipelines per Kafka topic via config rather than code; Terraform-provisioned Lambdas consumed the pipeline configs automatically. Still in production and has since been extended and enhanced by the team.
+          - Eliminated 8-10 hours of manual effort per survey onboarding by migrating a legacy on-prem SQL Server system to a cloud-native architecture, with data flowing from landing zone to S3 to Snowflake and modeled in DBT, delivering the team's first major cloud-native data product.
+          - Designed a modular DBT model that parsed arbitrary survey question structures into a consistent key-value fact table, making any survey queryable via a unified model regardless of structure and eliminating per-survey bespoke SQL.
+
+      - Job Title: Consultant, Data Engineer
+        Team: Enterprise Data Products
+        Duration: October 2020 – October 2021
+        Responsibilities:
+          - Transitioned from analytics into engineering through self-directed upskilling, contributing production NodeJS code to a greenfield enterprise eventing platform and demonstrating language versatility and the ability to ramp quickly in an unfamiliar stack.
+          - Embedded with Personal Lines business stakeholders to define and deliver channel containment metrics off raw event data, informing strategies to reduce customer escalations to live agents.
+
+      - Job Title: Business Intelligence Intern & Analyst
+        Team: ""
+        Duration: June 2019 – October 2020
+        Responsibilities:
+          - Automated ETL pipelines using Python and SQL, cutting 16+ hours of manual reporting per month and freeing analyst time for higher-value work.
+          - Developed a QlikView dashboard tracking virtual machine costing, enabling more efficient infrastructure cost allocation decisions.
+
+skills:
+  - "AI & LLM Systems": "RAG, multi-agent orchestration, Text-to-SQL, LangChain/LangGraph, LLM-as-Judge evaluation, prompt engineering, vector search"
+  - "Backend & Infrastructure": "Python, AWS (Lambda, Bedrock, EKS, S3, EventBridge, IAM), Kubernetes, Docker, Terraform, Helm, CI/CD (Jenkins, GitHub Actions)"
+  - "Languages & APIs": "Python, SQL, JavaScript/NodeJS, REST"
+  - "Data Platforms & Modeling": "Databricks (Unity Catalog, Lakeflow, Asset Bundles), Snowflake, DBT, Data Vault, Kimball, MongoDB"

@@ -1,0 +1,38 @@
+name: Build & Release Resume
+
+on:
+  push:
+    branches: [main]
+
+# Allow the workflow to create releases
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Liberation Sans (Helvetica/Arial-compatible font)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-liberation
+          fc-cache -f
+
+      - name: Install Typst
+        uses: typst-community/setup-typst@v4
+
+      - name: Compile resume
+        run: typst compile resume.typ resume.pdf
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.run_number }}
+          name: Resume v${{ github.run_number }}
+          body: |
+            Auto-generated resume PDF from commit ${{ github.sha }}.
+          files: resume.pdf
+          make_latest: true
